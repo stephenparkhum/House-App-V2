@@ -1,5 +1,5 @@
-import { Box, Image, Heading } from '@chakra-ui/react'
-import React from 'react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Image, Heading } from '@chakra-ui/react'
+// import React from 'react'
 import { House } from '../types/types'
 import { useParams } from 'react-router-dom'
 import RoomButton from './RoomButton'
@@ -32,10 +32,26 @@ const HousePage = ({ houses }: Props) => {
             <Heading as="h1" size="2xl">{name ? name : 'test'}</Heading>
           </Box>
         </Box>
-        <Box>
-          <Heading textAlign="left" as="h2" size="xl">Rooms</Heading>
-          {displayRooms()}
-        </Box>
+        <Tabs variant="enclosed">
+          <TabList>
+            <Tab>Admin</Tab>
+            <Tab>Rooms</Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <Box>
+                <h1>Admin</h1>
+              </Box>
+            </TabPanel>
+            <TabPanel>
+              <Box>
+                <Heading textAlign="left" as="h2" size="l">Rooms</Heading>
+                {displayRooms()}
+              </Box>
+            </TabPanel>
+
+          </TabPanels>
+        </Tabs>
       </Box>
     </>
   )

@@ -9,6 +9,29 @@ export interface Room {
   isGuestRoom: boolean,
 }
 
+export interface Utility {
+  name: string,
+  dueDate: string,
+  avgPrice: number
+}
+
+type Mortgage = {
+  mortgage: number,
+  mortgageTerm: number,
+  mortgageHolder: string,
+  mortgageInsurance?: boolean,
+  mortgageInsurancePrice: number,
+}
+
+export interface HouseCosts extends Mortgage {
+  taxes: number,
+}
+
+export interface Admin {
+  utilities: Utility[],
+  expenses: HouseCosts
+}
+
 export interface Address {
   street1: string,
   street2?: string,
@@ -32,7 +55,8 @@ export interface House {
   isAirbnb?: boolean,
   airbnbPrice?: number,
   airbnbRating?: number,
-  address?: Address
+  address?: Address,
+  admin?: Admin
 }
 
 export interface User {
