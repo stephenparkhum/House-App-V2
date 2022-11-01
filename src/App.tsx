@@ -45,7 +45,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/contractors",
-    element: <Contractors contractors={testUser.houses[0].admin.contractors} />,
+    element: <Contractors contractors={testUser.contractors} />,
   },
 ]);
 

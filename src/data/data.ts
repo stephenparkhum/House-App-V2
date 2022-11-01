@@ -1,21 +1,5 @@
 import { Room, House, User, Admin, Contractor } from '../types/types'
 
-const contractors: Contractor[] = [
-  {
-    name: 'John Smith',
-    specialty: 'Plumbing',
-    costPerHour: 150,
-    phoneNumber: '(503) 555-1234',
-    emailAddress: 'john@plumbing.com'
-  },
-  {
-    name: 'Dan Something',
-    specialty: 'Electric',
-    costPerHour: 250,
-    phoneNumber: '(503) 555-9999',
-    emailAddress: 'dan@electricty.com'
-  },
-]
 
 const testRooms: Room[] = [{
   id: '7D9B75B3-4384-47DB-8E81-B9D6AE0C5676',
@@ -96,8 +80,7 @@ const testAdmin: Admin = {
     mortgageHolder: 'Wells Fargo',
     mortgageInsurance: true,
     mortgageInsurancePrice: 120
-  },
-  contractors: contractors
+  }
 }
 
 const testAirbnbAdmin: Admin = {
@@ -115,8 +98,7 @@ const testAirbnbAdmin: Admin = {
     mortgageHolder: 'State Farm',
     mortgageInsurance: true,
     mortgageInsurancePrice: 75
-  },
-  contractors: contractors
+  }
 }
 
 const testHouse: House = {
@@ -164,10 +146,28 @@ const testAirbnb: House = {
   admin: testAirbnbAdmin
 }
 
+const contractors: Contractor[] = [
+  {
+    name: 'John Smith',
+    specialty: 'Plumbing',
+    costPerHour: 150,
+    phoneNumber: '(503) 555-1234',
+    emailAddress: 'john@plumbing.com'
+  },
+  {
+    name: 'Dan Something',
+    specialty: 'Electric',
+    costPerHour: 250,
+    phoneNumber: '(503) 555-9999',
+    emailAddress: 'dan@electricty.com'
+  },
+]
+
 const testUser: User = {
   id: '10EF343B-F305-44FA-9E41-6179D017284F',
   name: 'Stephen',
-  houses: [testHouse, testAirbnb]
+  houses: [testHouse, testAirbnb],
+  contractors: contractors
 }
 
 export default testUser

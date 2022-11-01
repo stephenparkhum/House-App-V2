@@ -40,7 +40,6 @@ export interface HouseCosts extends Mortgage {
 export interface Admin {
   utilities: Utility[],
   expenses: HouseCosts,
-  contractors: Contractor[]
 }
 
 export interface Address {
@@ -74,4 +73,5 @@ export interface User {
   id: string,
   name: string,
   houses: House[],
+  contractors: Contractor[]
 }
