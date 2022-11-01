@@ -38,6 +38,7 @@ const HousePage = ({ houses }: Props) => {
           <TabList>
             <Tab>Admin</Tab>
             <Tab>Rooms</Tab>
+            <Tab>Codes</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
@@ -99,6 +100,11 @@ const HousePage = ({ houses }: Props) => {
               <Box>
                 <Heading textAlign="left" as="h2" size="l">Rooms</Heading>
                 {displayRooms()}
+              </Box>
+            </TabPanel>
+            <TabPanel>
+              <Box>
+                <Heading textAlign="left" as="h2" size="l">Codes</Heading>
               </Box>
             </TabPanel>
           </TabPanels>

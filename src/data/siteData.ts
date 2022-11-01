@@ -4,7 +4,7 @@ interface SiteData {
 
 
 export const SiteData: SiteData = {
-  name: 'House App'
+  name: 'Clueprint'
 }
 
 
