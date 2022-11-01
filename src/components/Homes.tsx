@@ -1,5 +1,4 @@
-// import React from 'react'
-import { Box, Heading, ListItem, OrderedList } from '@chakra-ui/react'
+import { Box, Heading } from '@chakra-ui/react'
 import testUser from '../data/data'
 import { House } from '../types/types';
 import HouseCard from './HomeCard';
@@ -15,12 +14,14 @@ const Homes = () => {
     })
   }
 
+  const label = 'Your Homes'
+
   return (
     <Box>
+      <Heading textAlign="center">
+        {label.toUpperCase()}
+      </Heading>
       <Box textAlign="left">
-        <Heading>
-          Your Homes
-        </Heading>
         {displayHomesList(houses)}
       </Box>
     </Box>

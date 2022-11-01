@@ -15,7 +15,7 @@ const HouseCard = ({ house }: Props) => {
   return (
     <>
       <LinkBox marginBottom="5" maxW='md' borderWidth='1px' borderRadius='lg' overflow='hidden'>
-        <LinkOverlay href="/house">
+        <LinkOverlay href={`/house/${house.id}`}>
           <Box>
             <Image src={house.imgUrl ? house.imgUrl : ''} alt={house.name} />
             <Box p="5">
