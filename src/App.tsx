@@ -8,6 +8,11 @@ import {
   Flex,
   Spacer,
   Link,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  IconButton,
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import Homes from "./components/Homes"
@@ -21,6 +26,7 @@ import HousePage from './components/House'
 import testUser from './data/data'
 import { SiteData } from './data/siteData'
 import Room from "./components/Room";
+import { AddIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, RepeatIcon } from "@chakra-ui/icons";
 
 
 const router = createBrowserRouter([
@@ -50,11 +56,37 @@ export const App = () => {
               <Heading>{name}</Heading>
             </Link>
             <Spacer />
-            <ColorModeSwitcher justifySelf="flex-end" />
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                aria-label='Options'
+                icon={<HamburgerIcon />}
+                variant='outline'
+              />
+              <MenuList>
+                <Link href="/">
+                  <MenuItem>
+                    Your Houses
+                  </MenuItem>
+                </Link>
+                <Link href="/">
+                  <MenuItem>
+                    Contacts
+                  </MenuItem>
+                </Link>
+              </MenuList>
+            </Menu>
           </Flex>
           <RouterProvider router={router} />
         </Grid>
       </Box>
+      <Flex direction="row" alignItems="center">
+        <Box alignSelf="center" mb="5" textAlign="center">
+          2022 | {name}
+        </Box>
+        <Spacer />
+        <ColorModeSwitcher />
+      </Flex>
     </ChakraProvider>
   )
 }
