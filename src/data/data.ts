@@ -5,13 +5,15 @@ const testRooms: Room[] = [{
   whoLivesInHere: ['Stephen', 'Sarah'],
   isOffice: false,
   isGuestRoom: false,
-  nickname: 'Master bedroom'
+  nickname: 'Master bedroom',
+  imgUrl: "https://images.pexels.com/photos/90317/pexels-photo-90317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
 },
 {
   id: '417F9DE0-7EA6-4A3D-B4EA-10C52023AD47',
   whoLivesInHere: ['Trevor'],
   isOffice: false,
   isGuestRoom: false,
+  imgUrl: 'https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   nickname: 'Attic Bedroom'
 },
 {
@@ -19,6 +21,7 @@ const testRooms: Room[] = [{
   whoLivesInHere: ['Trevor'],
   isOffice: false,
   isGuestRoom: false,
+  imgUrl: 'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   nickname: 'Other bedroom'
 },
 {
@@ -26,6 +29,7 @@ const testRooms: Room[] = [{
   whoLivesInHere: [''],
   isOffice: true,
   nickname: 'Office',
+  imgUrl: 'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   isGuestRoom: true,
 }]
 
@@ -34,6 +38,7 @@ const testAirbnbRooms: Room[] = [{
   nickname: 'Room 1',
   whoLivesInHere: ['NA'],
   isOffice: false,
+  imgUrl: 'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   isGuestRoom: false,
 },
 {
@@ -42,11 +47,13 @@ const testAirbnbRooms: Room[] = [{
   whoLivesInHere: [''],
   isOffice: false,
   isGuestRoom: false,
+  imgUrl: 'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
 },
 {
   id: 'C51C41C7-EF3F-4FC4-B62B-3AD12E6F6560',
   whoLivesInHere: [''],
   isOffice: true,
+  imgUrl: 'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   isGuestRoom: true,
 }]
 
