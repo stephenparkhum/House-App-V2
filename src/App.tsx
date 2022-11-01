@@ -80,12 +80,14 @@ export const App = () => {
           <RouterProvider router={router} />
         </Grid>
       </Box>
-      <Flex direction="row" alignItems="center">
-        <Box alignSelf="center" mb="5" textAlign="center">
+      <Flex mb="5" ml="5" mr="5" direction="row" alignItems="center">
+        <Box alignSelf="center" textAlign="center">
           2022 | {name}
         </Box>
         <Spacer />
-        <ColorModeSwitcher />
+        <Box>
+          <ColorModeSwitcher />
+        </Box>
       </Flex>
     </ChakraProvider>
   )
