@@ -1,4 +1,4 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Image, Heading } from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Image, Heading, Divider, Flex, Spacer } from '@chakra-ui/react'
 // import React from 'react'
 import { House } from '../types/types'
 import { useParams } from 'react-router-dom'
@@ -12,7 +12,9 @@ const HousePage = ({ houses }: Props) => {
   const { houseId } = useParams();
 
   const currentHouse = houses.filter(house => house.id == houseId)
-  const { rooms, name, imgUrl } = currentHouse[0]
+  const { rooms, name, imgUrl, admin } = currentHouse[0]
+
+  const { utilities, expenses } = admin
 
 
   const displayRooms = () => {
@@ -40,7 +42,57 @@ const HousePage = ({ houses }: Props) => {
           <TabPanels>
             <TabPanel>
               <Box>
-                <h1>Admin</h1>
+                <Box mt="5" mb="5" textAlign="left">
+                  <Heading as="h4" size="md">
+                    Housing Costs
+                  </Heading>
+                  <Flex alignItems="center" direction="row">
+                    <Box>
+                      Mortgage
+                    </Box>
+                    <Spacer />
+                    <Box>
+                      ${expenses.mortgage}/mth
+                    </Box>
+                  </Flex>
+                  {expenses.mortgageInsurance && (
+                    <Flex alignItems="center" direction="row">
+                      <Box>
+                        Mortgage Insurance
+                      </Box>
+                      <Spacer />
+                      <Box>
+                        ${expenses.mortgageInsurancePrice}/mth
+                      </Box>
+                    </Flex>
+                  )}
+                </Box>
+                <Divider />
+                <Box>
+                  <Box mt="5" mb="5" textAlign="left">
+                    <Heading as="h4" size="md">
+                      Utilities
+                    </Heading>
+                  </Box>
+                  <Flex alignItems="center" direction="row">
+                    <Box>
+                      {utilities[0].companyName}
+                    </Box>
+                    <Spacer />
+                    <Box>
+                      {utilities[0].companyPhone}
+                    </Box>
+                  </Flex>
+                  <Flex alignItems="center" direction="row">
+                    <Box>
+                      {utilities[0].type} (avg.)
+                    </Box>
+                    <Spacer />
+                    <Box>
+                      ${utilities[0].avgPrice}/mth
+                    </Box>
+                  </Flex>
+                </Box>
               </Box>
             </TabPanel>
             <TabPanel>
@@ -49,7 +101,6 @@ const HousePage = ({ houses }: Props) => {
                 {displayRooms()}
               </Box>
             </TabPanel>
-
           </TabPanels>
         </Tabs>
       </Box>

@@ -10,7 +10,9 @@ export interface Room {
 }
 
 export interface Utility {
-  name: string,
+  companyName: string,
+  companyPhone: string,
+  type: string,
   dueDate: string,
   avgPrice: number
 }
@@ -56,7 +58,7 @@ export interface House {
   airbnbPrice?: number,
   airbnbRating?: number,
   address?: Address,
-  admin?: Admin
+  admin: Admin
 }
 
 export interface User {

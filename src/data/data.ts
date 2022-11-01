@@ -1,4 +1,4 @@
-import { Room, House, User } from '../types/types'
+import { Room, House, User, Admin } from '../types/types'
 
 const testRooms: Room[] = [{
   id: '7D9B75B3-4384-47DB-8E81-B9D6AE0C5676',
@@ -64,6 +64,42 @@ const testAirbnbRooms: Room[] = [{
   isGuestRoom: true,
 }]
 
+const testAdmin: Admin = {
+  utilities: [{
+    companyName: 'Portland General Electric',
+    companyPhone: '503-123-1234',
+    type: 'Electricity',
+    dueDate: '1st',
+    avgPrice: 150
+  }],
+  expenses: {
+    taxes: 5000,
+    mortgage: 2000,
+    mortgageTerm: 30,
+    mortgageHolder: 'Wells Fargo',
+    mortgageInsurance: true,
+    mortgageInsurancePrice: 120
+  }
+}
+
+const testAirbnbAdmin: Admin = {
+  utilities: [{
+    companyName: 'EWEB',
+    companyPhone: '541-345-1234',
+    type: 'Electricity',
+    dueDate: '1st',
+    avgPrice: 150
+  }],
+  expenses: {
+    taxes: 5000,
+    mortgage: 2000,
+    mortgageTerm: 30,
+    mortgageHolder: 'State Farm',
+    mortgageInsurance: true,
+    mortgageInsurancePrice: 75
+  }
+}
+
 const testHouse: House = {
   id: 'FD5918BE-FA28-4FCE-ACFA-C8DB07180FC9',
   name: 'Le Chateau Hante',
@@ -82,7 +118,8 @@ const testHouse: House = {
     city: 'Portland',
     zipcode: '97222',
     country: 'USA'
-  }
+  },
+  admin: testAdmin
 }
 
 const testAirbnb: House = {
@@ -104,7 +141,8 @@ const testAirbnb: House = {
     city: 'Eugene',
     zipcode: '97402',
     country: 'USA'
-  }
+  },
+  admin: testAirbnbAdmin
 }
 
 const testUser: User = {
