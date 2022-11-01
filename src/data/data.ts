@@ -1,42 +1,51 @@
-import { Room, House, User, Admin, Contractor } from '../types/types'
+import { Room, House, User, Admin, Contractor, Appliance } from '../types/types'
 
 
-const testRooms: Room[] = [{
-  id: '7D9B75B3-4384-47DB-8E81-B9D6AE0C5676',
-  whoLivesInHere: ['Stephen', 'Sarah'],
-  isOffice: false,
-  isGuestRoom: false,
-  nickname: 'Master bedroom',
-  type: 'Bedroom',
-  imgUrl: "https://images.pexels.com/photos/90317/pexels-photo-90317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-},
-{
-  id: '417F9DE0-7EA6-4A3D-B4EA-10C52023AD47',
-  whoLivesInHere: ['Trevor'],
-  isOffice: false,
-  isGuestRoom: false,
-  imgUrl: 'https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  type: 'Bedroom',
-  nickname: 'Attic Bedroom'
-},
-{
-  id: 'C51C41C7-EF3F-4FC4-B62B-3AD12E6F6560',
-  whoLivesInHere: ['Trevor'],
-  isOffice: false,
-  isGuestRoom: false,
-  imgUrl: 'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  type: 'Bedr0om',
-  nickname: 'Other bedroom'
-},
-{
-  id: '05AF3D3E-AA31-4CD0-B397-F8D40CE01F71',
-  whoLivesInHere: [''],
-  isOffice: true,
-  nickname: 'Home Office',
-  type: 'Office',
-  imgUrl: 'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  isGuestRoom: true,
-}]
+const testRooms: Room[] = [
+  {
+    id: '7D9B75B3-4384-47DB-8E81-B9D6AE0C5676',
+    whoLivesInHere: ['Stephen', 'Sarah'],
+    isOffice: false,
+    isGuestRoom: false,
+    nickname: 'Master bedroom',
+    type: 'Bedroom',
+    imgUrl: "https://images.pexels.com/photos/90317/pexels-photo-90317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    id: '5F63795D-6E45-475E-BA00-19D1B9168EA2',
+    isOffice: false,
+    isGuestRoom: false,
+    nickname: 'Kitchen',
+    type: 'Kitchen',
+    imgUrl: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: '417F9DE0-7EA6-4A3D-B4EA-10C52023AD47',
+    whoLivesInHere: ['Trevor'],
+    isOffice: false,
+    isGuestRoom: false,
+    imgUrl: 'https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    type: 'Bedroom',
+    nickname: 'Attic Bedroom'
+  },
+  {
+    id: 'C51C41C7-EF3F-4FC4-B62B-3AD12E6F6560',
+    whoLivesInHere: ['Trevor'],
+    isOffice: false,
+    isGuestRoom: false,
+    imgUrl: 'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    type: 'Bedr0om',
+    nickname: 'Other bedroom'
+  },
+  {
+    id: '05AF3D3E-AA31-4CD0-B397-F8D40CE01F71',
+    whoLivesInHere: [''],
+    isOffice: true,
+    nickname: 'Home Office',
+    type: 'Office',
+    imgUrl: 'https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    isGuestRoom: true,
+  }]
 
 const testAirbnbRooms: Room[] = [{
   id: '7D9B75B3-4384-47DB-8E81-B9D6AE0C5676',
@@ -163,14 +172,21 @@ const contractors: Contractor[] = [
   },
 ]
 
+const testAppliances: Appliance[] = [
+  {
+    name: 'Refrigerator',
+    make: 'Samsung',
+    model: '443GFE',
+    rooms: ['19AF1EA4-4535-4E71-B4F1-2C44331426BA', '417F9DE0-7EA6-4A3D-B4EA-10C52023AD47']
+  }
+]
+
 const testUser: User = {
   id: '10EF343B-F305-44FA-9E41-6179D017284F',
   name: 'Stephen',
   houses: [testHouse, testAirbnb],
-  contractors: contractors
+  contractors: contractors,
+  appliances: testAppliances,
 }
 
 export default testUser
-
-
-

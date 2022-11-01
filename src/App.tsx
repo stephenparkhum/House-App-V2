@@ -26,8 +26,9 @@ import HousePage from './components/House'
 import testUser from './data/data'
 import { SiteData } from './data/siteData'
 import Room from "./components/Room";
-import { AddIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, RepeatIcon } from "@chakra-ui/icons";
+import { AddIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, RepeatIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 import Contractors from "./components/Contractors";
+import Appliances from "./components/Appliances";
 
 
 const router = createBrowserRouter([
@@ -47,7 +48,30 @@ const router = createBrowserRouter([
     path: "/contractors",
     element: <Contractors contractors={testUser.contractors} />,
   },
+  {
+    path: "/appliances",
+    element: <Appliances appliances={testUser.appliances} />,
+  },
 ]);
+
+
+const menu = [
+  'Your Houses',
+  'Contractors',
+  'Appliances'
+]
+
+const displayMenu = () => {
+  return menu.map((item) => {
+    return (
+      <Link href={item === 'Your Houses' ? '/' : `/${item.toLowerCase()}`}>
+        <MenuItem>
+          {item}
+        </MenuItem>
+      </Link>
+    )
+  })
+}
 
 export const App = () => {
   const { name } = SiteData;
@@ -64,21 +88,12 @@ export const App = () => {
             <Menu>
               <MenuButton
                 as={IconButton}
-                aria-label='Options'
+                aria-label='Menu'
                 icon={<HamburgerIcon />}
                 variant='outline'
               />
               <MenuList>
-                <Link href="/">
-                  <MenuItem>
-                    Your Houses
-                  </MenuItem>
-                </Link>
-                <Link href="/contractors">
-                  <MenuItem>
-                    Contractors
-                  </MenuItem>
-                </Link>
+                {displayMenu()}
               </MenuList>
             </Menu>
           </Flex>

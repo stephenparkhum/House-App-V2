@@ -1,7 +1,6 @@
 export interface Room {
   id: string,
   nickname?: string,
-  // Add 'household' type declaration here
   whoLivesInHere?: string[],
   type: string,
   isOffice: boolean,
@@ -42,6 +41,16 @@ export interface Admin {
   expenses: HouseCosts,
 }
 
+export interface Appliance {
+  name: string,
+  rooms: string[],
+  make: string,
+  model?: string,
+  imgUrl?: string,
+  url?: string,
+  manual?: boolean
+}
+
 export interface Address {
   street1: string,
   street2?: string,
@@ -73,5 +82,6 @@ export interface User {
   id: string,
   name: string,
   houses: House[],
-  contractors: Contractor[]
+  contractors: Contractor[],
+  appliances: Appliance[]
 }
