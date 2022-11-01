@@ -27,6 +27,7 @@ import testUser from './data/data'
 import { SiteData } from './data/siteData'
 import Room from "./components/Room";
 import { AddIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, RepeatIcon } from "@chakra-ui/icons";
+import Contractors from "./components/Contractors";
 
 
 const router = createBrowserRouter([
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/house/:houseId/room/:roomId",
     element: <Room houses={testUser.houses} />,
+  },
+  {
+    path: "/contractors",
+    element: <Contractors contractors={testUser.houses[0].admin.contractors} />,
   },
 ]);
 
@@ -69,9 +74,9 @@ export const App = () => {
                     Your Houses
                   </MenuItem>
                 </Link>
-                <Link href="/">
+                <Link href="/contractors">
                   <MenuItem>
-                    Contacts
+                    Contractors
                   </MenuItem>
                 </Link>
               </MenuList>

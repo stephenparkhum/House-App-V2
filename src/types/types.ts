@@ -9,6 +9,14 @@ export interface Room {
   isGuestRoom: boolean,
 }
 
+export interface Contractor {
+  name: string,
+  specialty: string,
+  costPerHour: number,
+  phoneNumber: string,
+  emailAddress: string
+}
+
 export interface Utility {
   companyName: string,
   companyPhone: string,
@@ -31,7 +39,8 @@ export interface HouseCosts extends Mortgage {
 
 export interface Admin {
   utilities: Utility[],
-  expenses: HouseCosts
+  expenses: HouseCosts,
+  contractors: Contractor[]
 }
 
 export interface Address {
