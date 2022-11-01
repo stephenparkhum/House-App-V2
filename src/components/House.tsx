@@ -17,7 +17,7 @@ const HousePage = ({ houses }: Props) => {
 
   const displayRooms = () => {
     return rooms.map((room, idx) => {
-      return (<RoomButton idx={idx} room={room} />)
+      return (<RoomButton houseId={houseId} idx={idx} room={room} />)
     })
   }
 

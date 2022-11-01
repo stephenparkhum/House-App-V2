@@ -3,6 +3,7 @@ export interface Room {
   nickname?: string,
   // Add 'household' type declaration here
   whoLivesInHere?: string[],
+  type: string,
   isOffice: boolean,
   imgUrl?: string,
   isGuestRoom: boolean,

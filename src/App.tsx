@@ -15,6 +15,7 @@ import {
 import HousePage from './components/House'
 
 import testUser from './data/data'
+import Room from "./components/Room";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/house/:houseId",
     element: <HousePage houses={testUser.houses} />,
+  },
+  {
+    path: "/house/:houseId/room/:roomId",
+    element: <Room houses={testUser.houses} />,
   },
 ]);
 

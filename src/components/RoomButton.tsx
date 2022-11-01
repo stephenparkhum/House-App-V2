@@ -5,13 +5,14 @@ import { ChevronRightIcon } from '@chakra-ui/icons'
 
 type Props = {
   room: Room,
-  idx: number
+  idx: number,
+  houseId: string | undefined
 }
 
-const RoomButton = ({ room, idx }: Props) => {
+const RoomButton = ({ room, idx, houseId }: Props) => {
   return (
     <LinkBox marginBottom="5" borderWidth='1px' borderRadius='lg'>
-      <LinkOverlay href={`/room/${room.id}`}>
+      <LinkOverlay href={`/house/${houseId}/room/${room.id}`}>
         <Flex alignItems="center">
           <Box w="100" h="100">
             <Image w="100%" h="100%" src={room.imgUrl ? room.imgUrl : ''} alt={room.nickname} />
