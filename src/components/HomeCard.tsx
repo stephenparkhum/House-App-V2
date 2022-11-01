@@ -10,6 +10,7 @@ type Props = {
 const HouseCard = ({ house }: Props) => {
 
   const beds = house.rooms.length;
+  const { isAirbnb } = house;
 
   return (
     <>
@@ -17,8 +18,8 @@ const HouseCard = ({ house }: Props) => {
 
         <Box p='6'>
           <Box display='flex' alignItems='baseline'>
-            <Badge borderRadius='full' px='2' colorScheme='teal'>
-              New
+            <Badge borderRadius='full' px='2' colorScheme={!!isAirbnb ? 'red' : 'yellow'}>
+              {!!isAirbnb ? 'Airbnb' : 'Residence'}
             </Badge>
             <Box
               color='gray.500'
@@ -42,26 +43,30 @@ const HouseCard = ({ house }: Props) => {
             {house.name}
           </Box>
 
-          <Box>
-            {house.airbnbPrice}
-            <Box as='span' color='gray.600' fontSize='sm'>
-              / wk
-            </Box>
-          </Box>
+          {isAirbnb && (
+            <>
+              <Box>
+                ${house.airbnbPrice}
+                <Box as='span' color='gray.600' fontSize='sm'>
+                  / night
+                </Box>
+              </Box>
 
-          <Box display='flex' mt='2' alignItems='center'>
-            {Array(5)
-              .fill('')
-              .map((_, i) => (
-                <StarIcon
-                  key={i}
-                  color={i < house.baths ? 'teal.500' : 'gray.300'}
-                />
-              ))}
-            <Box as='span' ml='2' color='gray.600' fontSize='sm'>
-              {house.baths} reviews
-            </Box>
-          </Box>
+              <Box display='flex' mt='2' alignItems='center'>
+                {Array(5)
+                  .fill('')
+                  .map((_, i) => (
+                    <StarIcon
+                      key={i}
+                      color={i < house.baths ? 'teal.500' : 'gray.300'}
+                    />
+                  ))}
+                <Box as='span' ml='2' color='gray.600' fontSize='sm'>
+                  {house.baths} reviews
+                </Box>
+              </Box>
+            </>
+          )}
         </Box>
       </Box>
     </>

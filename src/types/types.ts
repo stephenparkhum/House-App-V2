@@ -24,10 +24,12 @@ export interface House {
   attic: boolean,
   isAtticFurnished?: boolean,
   rooms: Room[],
+  imgUrl?: string,
   baths: number,
   isMainResidence: boolean,
   isAirbnb?: boolean,
   airbnbPrice?: number,
+  airbnbRating?: number,
   address?: Address
 }
 

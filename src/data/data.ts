@@ -80,6 +80,7 @@ const testAirbnb: House = {
   isAirbnb: true,
   isMainResidence: false,
   baths: 3,
+  airbnbPrice: 155,
   address: {
     street1: '666 Eugene Street',
     state: 'Oregon',
