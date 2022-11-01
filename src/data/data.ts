@@ -54,6 +54,7 @@ const testHouse: House = {
   id: 'FD5918BE-FA28-4FCE-ACFA-C8DB07180FC9',
   name: 'Le Chateau Hante',
   floors: 2,
+  imgUrl: "https://images.pexels.com/photos/3935320/pexels-photo-3935320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   basement: true,
   attic: true,
   isAtticFurnished: true,
@@ -73,12 +74,14 @@ const testHouse: House = {
 const testAirbnb: House = {
   id: '19AF1EA4-4535-4E71-B4F1-2C44331426BA',
   name: 'Eugene House',
+  imgUrl: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   floors: 3,
   basement: false,
   attic: false,
   rooms: testAirbnbRooms,
   isAirbnb: true,
   isMainResidence: false,
+  airbnbRating: 4,
   baths: 3,
   airbnbPrice: 155,
   address: {

@@ -14,60 +14,61 @@ const HouseCard = ({ house }: Props) => {
 
   return (
     <>
-      <LinkBox maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+      <LinkBox marginBottom="5" maxW='md' borderWidth='1px' borderRadius='lg' overflow='hidden'>
         <LinkOverlay href="/house">
-          <Box p='6'>
-            <Box display='flex' alignItems='baseline'>
-              <Badge borderRadius='full' px='2' colorScheme={!!isAirbnb ? 'red' : 'yellow'}>
-                {!!isAirbnb ? 'Airbnb' : 'Residence'}
-              </Badge>
-              <Box
-                color='gray.500'
-                fontWeight='semibold'
-                letterSpacing='wide'
-                fontSize='xs'
-                textTransform='uppercase'
-                ml='2'
-              >
-                {beds} beds &bull; {house.baths} baths
+          <Box>
+            <Image src={house.imgUrl ? house.imgUrl : ''} alt={house.name} />
+            <Box p="5">
+              <Box display='flex' alignItems='baseline'>
+                <Badge borderRadius='full' px='2' colorScheme={!!isAirbnb ? 'red' : 'yellow'}>
+                  {!!isAirbnb ? 'Airbnb' : 'Residence'}
+                </Badge>
+                <Box
+                  color='gray.500'
+                  fontWeight='semibold'
+                  letterSpacing='wide'
+                  fontSize='xs'
+                  textTransform='uppercase'
+                  ml='2'
+                >
+                  {beds} beds &bull; {house.baths} baths
+                </Box>
               </Box>
-            </Box>
-
-            <Box
-              mt='1'
-              fontWeight='semibold'
-              as='h4'
-              lineHeight='tight'
-              noOfLines={1}
-            >
-              {house.name}
-            </Box>
-            {isAirbnb && (
-              <>
-                <Box>
-                  ${house.airbnbPrice}
-                  <Box as='span' color='gray.600' fontSize='sm'>
-                    / night
+              <Box
+                mt='1'
+                fontWeight='semibold'
+                as='h4'
+                lineHeight='tight'
+                noOfLines={1}
+              >
+                {house.name}
+              </Box>
+              {isAirbnb && (
+                <>
+                  <Box>
+                    ${house.airbnbPrice}
+                    <Box as='span' color='gray.600' fontSize='sm'>
+                      / night
+                    </Box>
                   </Box>
-                </Box>
 
-                <Box display='flex' mt='2' alignItems='center'>
-                  {Array(5)
-                    .fill('')
-                    .map((_, i) => (
-                      <StarIcon
-                        key={i}
-                        color={i < house.baths ? 'teal.500' : 'gray.300'}
-                      />
-                    ))}
-                  <Box as='span' ml='2' color='gray.600' fontSize='sm'>
-                    {house.baths} reviews
+                  <Box display='flex' mt='2' alignItems='center'>
+                    {Array(5)
+                      .fill('')
+                      .map((_, i) => (
+                        <StarIcon
+                          key={i}
+                          color={i < 4 ? 'teal.500' : 'gray.300'}
+                        />
+                      ))}
+                    <Box as='span' ml='2' color='gray.600' fontSize='sm'>
+                      {house.baths} reviews
+                    </Box>
                   </Box>
-                </Box>
-              </>
-            )}
+                </>
+              )}
+            </Box>
           </Box>
-
         </LinkOverlay>
       </LinkBox>
     </>

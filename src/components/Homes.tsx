@@ -11,20 +11,17 @@ const Homes = () => {
     return houses.map((house: House) => {
       return (
         <HouseCard house={house} />
-
       )
     })
   }
 
   return (
     <Box>
-      <Heading>
-        Your Homes
-      </Heading>
-      <Box>
-        <OrderedList>
-          {displayHomesList(houses)}
-        </OrderedList>
+      <Box textAlign="left">
+        <Heading>
+          Your Homes
+        </Heading>
+        {displayHomesList(houses)}
       </Box>
     </Box>
   )
