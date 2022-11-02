@@ -1,4 +1,4 @@
-import { Box, Grid, Image, Flex, Spacer, GridItem } from '@chakra-ui/react'
+import { Box, Grid, Image, Flex, Spacer, GridItem, Heading } from '@chakra-ui/react'
 import { Appliance } from '../types/types'
 
 type Props = {
@@ -23,6 +23,7 @@ const Appliances = ({ appliances }: Props) => {
 
   return (
     <Box>
+      <Heading mb="5">Appliances</Heading>
       <Grid templateColumns='repeat(3, 1fr)' gap={6}>
         {displayAppliances()}
       </Grid>
