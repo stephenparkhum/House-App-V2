@@ -4,7 +4,6 @@ import {
   Box,
   Grid,
   theme,
-  Heading,
   Flex,
   Spacer,
   Link,
@@ -82,7 +81,7 @@ export const App = () => {
         <Grid p={3}>
           <Flex mb="10">
             <Link href="/">
-              <Heading>{name}</Heading>
+              <ChevronLeftIcon />
             </Link>
             <Spacer />
             <Menu>

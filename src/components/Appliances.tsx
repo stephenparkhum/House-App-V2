@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Grid, Image, Flex, Spacer, GridItem } from '@chakra-ui/react'
 import { Appliance } from '../types/types'
 
 type Props = {
@@ -7,13 +7,27 @@ type Props = {
 }
 
 const Appliances = ({ appliances }: Props) => {
+  const displayAppliances = () => {
+    return appliances.map((a) => {
+      return (
+        <GridItem>
+          <Flex direction="column">
+            <Image src={a.imgUrl} />
+            {a.name}
+            <small>{a.make}</small>
+          </Flex>
+        </GridItem>
+      )
+    })
+  }
+
   return (
     <Box>
-      {appliances.map((a) => { return <p>{a.name}</p> })}
+      <Grid templateColumns='repeat(3, 1fr)' gap={6}>
+        {displayAppliances()}
+      </Grid>
     </Box>
-
   )
-
 }
 
 export default Appliances

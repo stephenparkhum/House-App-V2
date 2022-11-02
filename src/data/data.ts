@@ -177,6 +177,14 @@ const testAppliances: Appliance[] = [
     name: 'Refrigerator',
     make: 'Samsung',
     model: '443GFE',
+    imgUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.us.news.samsung.com%2Fus%2Fwp-content%2Fuploads%2F2016%2F05%2F14184916%2FSilo-25_RF22K9570SG_1.jpg&f=1&nofb=1&ipt=7dd32a24c3d110f5c32196b6e0b09fa268eeac6441aef7788f3cc79faaaf7042&ipo=images',
+    rooms: ['19AF1EA4-4535-4E71-B4F1-2C44331426BA', '417F9DE0-7EA6-4A3D-B4EA-10C52023AD47']
+  },
+  {
+    name: 'TV',
+    make: 'Samsung',
+    imgUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.samsung.com%2Fis%2Fimage%2Fsamsung%2Fae_UA46EH6030RXZN_005_Front_black%3F%24L2-Thumbnail%24&f=1&nofb=1&ipt=b322329830c5a77ad92ec5d7072dd57b6f5f9b680932cc65fbdca70c1c0e6e94&ipo=images",
+    model: '123sdf',
     rooms: ['19AF1EA4-4535-4E71-B4F1-2C44331426BA', '417F9DE0-7EA6-4A3D-B4EA-10C52023AD47']
   }
 ]
