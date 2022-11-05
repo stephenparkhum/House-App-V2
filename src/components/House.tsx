@@ -1,4 +1,4 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Image, Heading, Divider, Flex, Spacer } from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Image, Heading, Divider, Flex, Spacer, Text } from '@chakra-ui/react'
 // import React from 'react'
 import { House } from '../types/types'
 import { useParams } from 'react-router-dom'
@@ -13,7 +13,7 @@ const HousePage = ({ houses }: Props) => {
   const { houseId } = useParams();
 
   const currentHouse = houses.filter(house => house.id == houseId)
-  const { rooms, name, imgUrl, admin } = currentHouse[0]
+  const { rooms, household, name, imgUrl, admin } = currentHouse[0]
 
   const { utilities, expenses } = admin
 
@@ -26,6 +26,14 @@ const HousePage = ({ houses }: Props) => {
 
     return total
   }
+
+
+  const tabs = [
+    'Admin',
+    'Rooms',
+    'Household',
+    'Codes',
+  ]
 
   return (
     <>
@@ -40,9 +48,7 @@ const HousePage = ({ houses }: Props) => {
         </Box>
         <Tabs variant="enclosed">
           <TabList>
-            <Tab>Admin</Tab>
-            <Tab>Rooms</Tab>
-            <Tab>Codes</Tab>
+            {tabs.map(tab => <Tab>{tab}</Tab>)}
           </TabList>
           <TabPanels>
             <TabPanel>
@@ -118,6 +124,14 @@ const HousePage = ({ houses }: Props) => {
                 {display.roomsList(rooms, houseId)}
               </Box>
             </TabPanel>
+            {household && (
+              <TabPanel textAlign="left">
+                <Box>
+                  <Heading textAlign="left" as="h2" size="l">Household</Heading>
+                  {household.map(person => <Text>{person.name}</Text>)}
+                </Box>
+              </TabPanel>
+            )}
             <TabPanel>
               <Box>
                 <Heading textAlign="left" as="h2" size="l">Codes</Heading>
