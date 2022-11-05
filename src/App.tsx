@@ -31,7 +31,6 @@ import Contractors from "./components/Contractors";
 import Appliances from "./components/Appliances";
 import { MARGIN } from "./globals/styling";
 import { display } from "./utilities/display";
-import Household from "./components/Household";
 
 
 const router = createBrowserRouter([
@@ -67,14 +66,12 @@ export const App = () => {
         <Box marginTop={`${MARGIN / 2}`} marginBottom={`${MARGIN / 2}`} textAlign="center" fontSize="xl">
           <Grid>
             <Flex mb="10">
-              <Link href="/">
-                <ChevronLeftIcon />
-              </Link>
-              <Spacer />
               <Box>
-                <Heading>
-                  {name}
-                </Heading>
+                <Link href="/">
+                  <Heading>
+                    {name}
+                  </Heading>
+                </Link>
               </Box>
               <Spacer />
               <Menu>

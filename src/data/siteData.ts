@@ -4,6 +4,6 @@ interface SiteData {
 }
 
 export const SiteData: SiteData = {
-  name: 'Dwell',
+  name: 'Dwellr',
   menu: ['Your Houses', 'Contractors', 'Appliances']
 }
