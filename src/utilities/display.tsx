@@ -11,7 +11,7 @@ export const display = {
   menu: () => {
     return menu.map((item) => {
       return (
-        <Link href={item === 'Your Houses' ? '/' : `/${item.toLowerCase()}`}>
+        <Link key={item} href={item === 'Your Houses' ? '/' : `/${item.toLowerCase()}`}>
           <MenuItem>
             {item}
           </MenuItem>

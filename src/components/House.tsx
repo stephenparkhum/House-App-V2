@@ -23,17 +23,15 @@ const HousePage = ({ houses }: Props) => {
     for (let i = 0; i < arr.length; i++) {
       total += arr[i]
     }
-
     return total
   }
-
 
   const tabs = [
     'Admin',
     'Rooms',
-    'Household',
-    'Codes',
   ]
+
+  if (household) { tabs.push('Household') }
 
   return (
     <>
@@ -48,7 +46,7 @@ const HousePage = ({ houses }: Props) => {
         </Box>
         <Tabs variant="enclosed">
           <TabList>
-            {tabs.map(tab => <Tab>{tab}</Tab>)}
+            {tabs.map(tab => <Tab key={tab}>{tab}</Tab>)}
           </TabList>
           <TabPanels>
             <TabPanel>
@@ -128,15 +126,10 @@ const HousePage = ({ houses }: Props) => {
               <TabPanel textAlign="left">
                 <Box>
                   <Heading textAlign="left" as="h2" size="l">Household</Heading>
-                  {household.map(person => <Text>{person.name}</Text>)}
+                  {household?.map(person => <Text key={person.name}>{person.name}</Text>)}
                 </Box>
               </TabPanel>
             )}
-            <TabPanel>
-              <Box>
-                <Heading textAlign="left" as="h2" size="l">Codes</Heading>
-              </Box>
-            </TabPanel>
           </TabPanels>
         </Tabs>
       </Box>
