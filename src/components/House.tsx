@@ -1,8 +1,6 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Image, Heading, Divider, Flex, Spacer, Text } from '@chakra-ui/react'
-// import React from 'react'
 import { House } from '../types/types'
 import { useParams } from 'react-router-dom'
-import RoomButton from './RoomButton'
 import { display } from '../utilities/display'
 
 type Props = {
@@ -14,7 +12,6 @@ const HousePage = ({ houses }: Props) => {
 
   const currentHouse = houses.filter(house => house.id == houseId)
   const { rooms, household, name, imgUrl, admin } = currentHouse[0]
-
   const { utilities, expenses } = admin
 
   const totals = (arr: number[]) => {
