@@ -1,19 +1,9 @@
 import { Box, Heading } from '@chakra-ui/react'
 import testUser from '../data/data'
-import { House } from '../types/types';
-import HouseCard from './HomeCard';
+import { display } from '../utilities/display';
 
 const Homes = () => {
   const { houses } = testUser;
-
-  const displayHomesList = (houses: House[]) => {
-    return houses.map((house: House) => {
-      return (
-        <HouseCard house={house} />
-      )
-    })
-  }
-
   const label = 'Your Homes'
 
   return (
@@ -22,7 +12,7 @@ const Homes = () => {
         {label.toUpperCase()}
       </Heading>
       <Box textAlign="left">
-        {displayHomesList(houses)}
+        {display.homesList(houses)}
       </Box>
     </Box>
   )

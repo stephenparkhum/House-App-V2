@@ -1,4 +1,4 @@
-import { Box, Grid, Image, Flex, Spacer, GridItem, Heading } from '@chakra-ui/react'
+import { Box, Grid, Image, Flex, GridItem, Heading } from '@chakra-ui/react'
 import { Appliance } from '../types/types'
 
 type Props = {

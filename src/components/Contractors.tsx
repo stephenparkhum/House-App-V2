@@ -3,9 +3,11 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon, Box, Heading
+  AccordionIcon, Box, Heading,
+  Text,
+  Link
 } from '@chakra-ui/react'
-import React from 'react'
+// import React from 'react'
 import { Contractor } from '../types/types'
 
 type Props = {
@@ -30,7 +32,9 @@ const Contractors = ({ contractors }: Props) => {
             <AccordionPanel pb={3}>
               <ul>
                 <li>
-                  Contact: {c.phoneNumber}
+                  <Text>
+                    Contact: <Link className="text-success" href={`tel:+1${c.phoneNumber}`}>{c.phoneNumber}</Link>
+                  </Text>
                 </li>
                 <li>
                   Specialty: {c.specialty}

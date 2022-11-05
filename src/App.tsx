@@ -12,6 +12,7 @@ import {
   MenuList,
   MenuItem,
   IconButton,
+  Container,
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import Homes from "./components/Homes"
@@ -77,28 +78,30 @@ export const App = () => {
 
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid p={3}>
-          <Flex mb="10">
-            <Link href="/">
-              <ChevronLeftIcon />
-            </Link>
-            <Spacer />
-            <Menu>
-              <MenuButton
-                as={IconButton}
-                aria-label='Menu'
-                icon={<HamburgerIcon />}
-                variant='outline'
-              />
-              <MenuList>
-                {displayMenu()}
-              </MenuList>
-            </Menu>
-          </Flex>
-          <RouterProvider router={router} />
-        </Grid>
-      </Box>
+      <Container>
+        <Box textAlign="center" fontSize="xl">
+          <Grid>
+            <Flex mb="10">
+              <Link href="/">
+                <ChevronLeftIcon />
+              </Link>
+              <Spacer />
+              <Menu>
+                <MenuButton
+                  as={IconButton}
+                  aria-label='Menu'
+                  icon={<HamburgerIcon />}
+                  variant='outline'
+                />
+                <MenuList>
+                  {displayMenu()}
+                </MenuList>
+              </Menu>
+            </Flex>
+            <RouterProvider router={router} />
+          </Grid>
+        </Box>
+      </Container>
       <Flex mb="5" ml="5" mr="5" direction="row" alignItems="center">
         <Box alignSelf="center" textAlign="center">
           2022 | {name}
