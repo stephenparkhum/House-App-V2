@@ -10,7 +10,6 @@ import {
   Menu,
   MenuButton,
   MenuList,
-  MenuItem,
   IconButton,
   Container,
   Heading,
@@ -32,6 +31,7 @@ import Contractors from "./components/Contractors";
 import Appliances from "./components/Appliances";
 import { MARGIN } from "./globals/styling";
 import { display } from "./utilities/display";
+import Household from "./components/Household";
 
 
 const router = createBrowserRouter([
@@ -54,6 +54,10 @@ const router = createBrowserRouter([
   {
     path: "/appliances",
     element: <Appliances appliances={testUser.appliances} />,
+  },
+  {
+    path: "/household",
+    element: <Household household={testUser.household} />,
   },
 ]);
 

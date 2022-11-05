@@ -8,6 +8,10 @@ export interface Room {
   isGuestRoom: boolean,
 }
 
+export interface Person {
+  name: string
+}
+
 export interface Contractor {
   name: string,
   specialty: string,
@@ -75,7 +79,8 @@ export interface House {
   airbnbPrice?: number,
   airbnbRating?: number,
   address?: Address,
-  admin: Admin
+  admin: Admin,
+  household?: Person[]
 }
 
 export interface User {

@@ -1,4 +1,4 @@
-import { Room, House, User, Admin, Contractor, Appliance } from '../types/types'
+import { Room, House, User, Admin, Contractor, Appliance, Person } from '../types/types'
 
 
 const testRooms: Room[] = [
@@ -110,6 +110,11 @@ const testAirbnbAdmin: Admin = {
   }
 }
 
+const testHousehold: Person[] = [
+  { name: 'Stephen' },
+  { name: 'Sarah' }
+]
+
 const testHouse: House = {
   id: 'FD5918BE-FA28-4FCE-ACFA-C8DB07180FC9',
   name: 'Le Chateau Hante',
@@ -129,7 +134,8 @@ const testHouse: House = {
     zipcode: '97222',
     country: 'USA'
   },
-  admin: testAdmin
+  admin: testAdmin,
+  household: testHousehold
 }
 
 const testAirbnb: House = {
