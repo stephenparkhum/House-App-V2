@@ -13,6 +13,7 @@ import {
   MenuItem,
   IconButton,
   Container,
+  Heading,
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import Homes from "./components/Homes"
@@ -30,6 +31,7 @@ import { HamburgerIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 import Contractors from "./components/Contractors";
 import Appliances from "./components/Appliances";
 import { MARGIN } from "./globals/styling";
+import { display } from "./utilities/display";
 
 
 const router = createBrowserRouter([
@@ -56,24 +58,6 @@ const router = createBrowserRouter([
 ]);
 
 
-const menu = [
-  'Your Houses',
-  'Contractors',
-  'Appliances'
-]
-
-const displayMenu = () => {
-  return menu.map((item) => {
-    return (
-      <Link href={item === 'Your Houses' ? '/' : `/${item.toLowerCase()}`}>
-        <MenuItem>
-          {item}
-        </MenuItem>
-      </Link>
-    )
-  })
-}
-
 export const App = () => {
   const { name } = SiteData;
 
@@ -87,6 +71,12 @@ export const App = () => {
                 <ChevronLeftIcon />
               </Link>
               <Spacer />
+              <Box>
+                <Heading>
+                  {name}
+                </Heading>
+              </Box>
+              <Spacer />
               <Menu>
                 <MenuButton
                   as={IconButton}
@@ -95,23 +85,23 @@ export const App = () => {
                   variant='outline'
                 />
                 <MenuList>
-                  {displayMenu()}
+                  {display.menu()}
                 </MenuList>
               </Menu>
             </Flex>
             <RouterProvider router={router} />
           </Grid>
         </Box>
+        <Flex mb="5" direction="row" alignItems="center">
+          <Box alignSelf="center" textAlign="center">
+            2022 | {name}
+          </Box>
+          <Spacer />
+          <Box>
+            <ColorModeSwitcher />
+          </Box>
+        </Flex>
       </Container>
-      <Flex mb="5" ml="5" mr="5" direction="row" alignItems="center">
-        <Box alignSelf="center" textAlign="center">
-          2022 | {name}
-        </Box>
-        <Spacer />
-        <Box>
-          <ColorModeSwitcher />
-        </Box>
-      </Flex>
     </ChakraProvider>
   )
 }

@@ -12,7 +12,10 @@ const Room = ({ houses }: Props) => {
   const house = houses.filter(house => house.id == houseId);
 
   const room = house[0].rooms.filter(room => room.id === roomId)[0];
-  const { nickname, imgUrl, type } = room
+  const { isOffice, nickname, imgUrl, type } = room
+
+
+  console.log(room['nickname'])
 
   return (
     <Box>

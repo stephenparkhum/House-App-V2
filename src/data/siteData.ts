@@ -1,10 +1,9 @@
 interface SiteData {
-  name: string
+  name: string,
+  menu: string[]
 }
-
 
 export const SiteData: SiteData = {
-  name: 'Blueprint'
+  name: 'Dwell',
+  menu: ['Your Houses', 'Contractors', 'Appliances']
 }
-
-
