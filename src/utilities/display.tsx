@@ -1,5 +1,6 @@
 import HouseCard from '../components/HomeCard';
-import { House } from '../types/types';
+import RoomButton from '../components/RoomButton';
+import { House, Room } from '../types/types';
 
 
 export const display = {
@@ -9,6 +10,10 @@ export const display = {
         <HouseCard house={house} />
       )
     })
+  },
+  roomsList: (rooms: Room[], houseId?: string) => {
+    return rooms.map((room: Room, idx: number) => {
+      return (<RoomButton houseId={houseId ? houseId : ''} idx={idx} room={room} />)
+    })
   }
 }
-

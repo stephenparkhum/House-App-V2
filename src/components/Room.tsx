@@ -1,6 +1,6 @@
 import { Box, Divider, Flex, Heading, Image, Spacer } from '@chakra-ui/react'
-import { ReactElement } from 'react';
 import { useParams } from 'react-router';
+import { MARGIN } from '../globals/styling';
 import { House } from '../types/types';
 
 type Props = {
@@ -9,8 +9,6 @@ type Props = {
 
 const Room = ({ houses }: Props) => {
   const { houseId, roomId } = useParams();
-  const MARGIN = 8;
-
   const house = houses.filter(house => house.id == houseId);
 
   const room = house[0].rooms.filter(room => room.id === roomId)[0];

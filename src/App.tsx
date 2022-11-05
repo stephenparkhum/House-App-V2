@@ -26,9 +26,10 @@ import HousePage from './components/House'
 import testUser from './data/data'
 import { SiteData } from './data/siteData'
 import Room from "./components/Room";
-import { AddIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, RepeatIcon, ChevronLeftIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 import Contractors from "./components/Contractors";
 import Appliances from "./components/Appliances";
+import { MARGIN } from "./globals/styling";
 
 
 const router = createBrowserRouter([
@@ -79,7 +80,7 @@ export const App = () => {
   return (
     <ChakraProvider theme={theme}>
       <Container>
-        <Box textAlign="center" fontSize="xl">
+        <Box marginTop={`${MARGIN / 2}`} marginBottom={`${MARGIN / 2}`} textAlign="center" fontSize="xl">
           <Grid>
             <Flex mb="10">
               <Link href="/">

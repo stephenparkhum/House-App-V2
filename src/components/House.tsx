@@ -3,6 +3,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Image, Heading, Divider, 
 import { House } from '../types/types'
 import { useParams } from 'react-router-dom'
 import RoomButton from './RoomButton'
+import { display } from '../utilities/display'
 
 type Props = {
   houses: House[]
@@ -16,22 +17,15 @@ const HousePage = ({ houses }: Props) => {
 
   const { utilities, expenses } = admin
 
-
-  const displayRooms = () => {
-    return rooms.map((room, idx) => {
-      return (<RoomButton houseId={houseId} idx={idx} room={room} />)
-    })
-  }
-
   return (
     <>
       <Box>
         <Box>
           <Box mb="8">
-            <Image src={imgUrl} />
+            <Heading as="h1" size="2xl">{name ? name : 'test'}</Heading>
           </Box>
           <Box mb="8">
-            <Heading as="h1" size="2xl">{name ? name : 'test'}</Heading>
+            <Image src={imgUrl} />
           </Box>
         </Box>
         <Tabs variant="enclosed">
@@ -99,7 +93,7 @@ const HousePage = ({ houses }: Props) => {
             <TabPanel>
               <Box>
                 <Heading textAlign="left" as="h2" size="l">Rooms</Heading>
-                {displayRooms()}
+                {display.roomsList(rooms, houseId)}
               </Box>
             </TabPanel>
             <TabPanel>
