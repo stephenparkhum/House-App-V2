@@ -17,6 +17,16 @@ const HousePage = ({ houses }: Props) => {
 
   const { utilities, expenses } = admin
 
+  const totals = (arr: number[]) => {
+    let total = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+      total += arr[i]
+    }
+
+    return total
+  }
+
   return (
     <>
       <Box>
@@ -61,6 +71,18 @@ const HousePage = ({ houses }: Props) => {
                       </Box>
                     </Flex>
                   )}
+                </Box>
+                <Spacer />
+                <Box>
+                  <Flex alignItems="center" direction="row">
+                    <Box>
+                      Total Cost
+                    </Box>
+                    <Spacer />
+                    <Box>
+                      ${totals([expenses.mortgageInsurance ? expenses.mortgageInsurancePrice : 0, expenses.mortgage])}/mth
+                    </Box>
+                  </Flex>
                 </Box>
                 <Divider />
                 <Box>
